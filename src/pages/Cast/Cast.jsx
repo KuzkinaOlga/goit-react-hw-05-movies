@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from 'service/api-service';
+import { getMovieCredits } from 'Service/api-service';
 
 export const Cast = () => {
   const { movieId } = useParams();

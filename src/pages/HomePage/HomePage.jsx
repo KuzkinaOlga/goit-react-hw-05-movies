@@ -1,7 +1,7 @@
 import { Container, FilmsGallery, Section } from 'components';
 import { useEffect, useState } from 'react';
 
-import { getTrendingMovies } from 'service/api-service';
+import { getTrendingMovies } from 'Service/api-service';
 
 export const HomePage = () => {
   const [films, setFilms] = useState([]);
