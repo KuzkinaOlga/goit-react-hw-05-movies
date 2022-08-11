@@ -4,7 +4,6 @@ import { searchMovies } from 'service/api-service';
 import { useSearchParams } from 'react-router-dom';
 
 export const MoviesPage = () => {
-  const [query, setQuery] = useState('');
   const [films, setFilms] = useState([]);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -29,7 +28,7 @@ export const MoviesPage = () => {
 
   const onSearchMovies = data => {
     setSearchParams({ query: data });
-    setQuery(searchParams.get('query'));
+    searchParams.get('query');
   };
 
   return (
