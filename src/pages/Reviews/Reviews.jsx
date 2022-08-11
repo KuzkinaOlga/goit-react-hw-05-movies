@@ -31,7 +31,7 @@ export const Reviews = () => {
             </li>
           ))
         ) : (
-          <h2>Sorry, we dont have this information</h2>
+          <h2>Sorry, we dont have this information, try again</h2>
         )}
       </ul>
     </div>
