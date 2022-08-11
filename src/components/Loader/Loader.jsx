@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { ThreeDots } from 'react-loader-spinner';
 
 const Loader = () => {
