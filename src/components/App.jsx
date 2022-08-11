@@ -1,15 +1,43 @@
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loader from './Loader/Loader';
 import { Layout } from 'components';
-import {
-  HomePage,
-  MoviesPage,
-  MovieDetailsPage,
-  Cast,
-  Reviews,
-  NotFound,
-} from 'pages';
+
+const HomePage = lazy(() =>
+  import('../pages/HomePage/HomePage').then(module => ({
+    default: module.HomePage,
+  }))
+);
+
+const MoviesPage = lazy(() =>
+  import('../pages/MoviesPage/MoviesPage').then(module => ({
+    default: module.MoviesPage,
+  }))
+);
+
+const MovieDetailsPage = lazy(() =>
+  import('../pages/MovieDetailsPage/MovieDetailsPage').then(module => ({
+    default: module.MovieDetailsPage,
+  }))
+);
+
+const Cast = lazy(() =>
+  import('../pages/Cast/Cast').then(module => ({
+    default: module.Cast,
+  }))
+);
+
+const Reviews = lazy(() =>
+  import('../pages/Reviews/Reviews').then(module => ({
+    default: module.Reviews,
+  }))
+);
+
+const NotFound = lazy(() =>
+  import('../pages/NotFound/NotFound').then(module => ({
+    default: module.NotFound,
+  }))
+);
 
 export const App = () => {
   return (
@@ -23,11 +51,8 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+
           <Route path="*" element={<NotFound />} />
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
-          {/* <Route path="*" element={<NoMatch />} /> */}
         </Route>
       </Routes>
     </Suspense>
