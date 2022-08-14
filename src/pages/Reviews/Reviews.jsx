@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieReviews } from 'service/api-service';
+import { getMovieReviews } from 'Service/api-service';
 
 export const Reviews = () => {
   const { movieId } = useParams();
