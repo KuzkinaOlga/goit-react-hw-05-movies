@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container, Section, SearchForm, FilmsGallery } from 'components';
-import { searchMovies } from 'Service/api-service';
+import { searchMovies } from 'service/api-service';
 import { useSearchParams } from 'react-router-dom';
 
 export const MoviesPage = () => {

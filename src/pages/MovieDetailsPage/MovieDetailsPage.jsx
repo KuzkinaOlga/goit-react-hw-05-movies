@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link, useParams, Outlet } from 'react-router-dom';
 import { Container, Section } from 'components';
-import { getMovieDetails } from 'Service/api-service';
+import { getMovieDetails } from 'service/api-service';
 import { imagePath } from 'helpers/imagePath';
 
 export const MovieDetailsPage = () => {
