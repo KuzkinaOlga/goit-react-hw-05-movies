@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Container, Section, SearchForm, FilmsGallery } from 'components';
 import { searchMovies } from 'Service/api-service';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 export const MoviesPage = () => {
   const [films, setFilms] = useState([]);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const searchFilm = searchParams.get('query');
