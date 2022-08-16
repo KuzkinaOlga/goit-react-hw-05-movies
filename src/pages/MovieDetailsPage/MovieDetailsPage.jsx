@@ -27,7 +27,7 @@ export const MovieDetailsPage = () => {
       } catch (error) {
         console.error(error);
         setError(error);
-        navigate('/', { replace: true });
+        navigate('*', { replace: true });
       }
     };
 
