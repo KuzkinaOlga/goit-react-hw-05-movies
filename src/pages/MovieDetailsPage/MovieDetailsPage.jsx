@@ -32,7 +32,7 @@ export const MovieDetailsPage = () => {
     };
 
     getMovie();
-  }, [movieId]);
+  }, [movieId, navigate]);
 
   return (
     <Section>
