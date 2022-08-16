@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useLocation, Link, useParams, Outlet } from 'react-router-dom';
+import {
+  useLocation,
+  Link,
+  useParams,
+  Outlet,
+  useNavigate,
+} from 'react-router-dom';
 import { Container, Section } from 'components';
 import { getMovieDetails } from 'Service/api-service';
 import { imagePath } from 'helpers/imagePath';
@@ -8,6 +14,7 @@ export const MovieDetailsPage = () => {
   const [film, setFilm] = useState({});
   const [error, setError] = useState(null);
   const { movieId } = useParams();
+  const navigate = useNavigate();
 
   const location = useLocation();
   const goBackLink = location?.state?.from ?? '/';
@@ -20,6 +27,7 @@ export const MovieDetailsPage = () => {
       } catch (error) {
         console.error(error);
         setError(error);
+        navigate('/', { replace: true });
       }
     };
 
